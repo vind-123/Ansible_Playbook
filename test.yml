@@ -1,0 +1,13 @@
+---
+- name: Install Apache
+  hosts: localhost
+  tasks:
+   - name: Install the Apache
+     yum:
+      name: nginx
+      state: present
+  - name: start the service
+    service:
+    name: nginx
+    state: started
+    enabled: true     
