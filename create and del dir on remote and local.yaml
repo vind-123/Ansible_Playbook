@@ -1,0 +1,18 @@
+---
+- name: Create the folder on a remote server
+  hosts: localhost
+  tasks:
+    - name: Create directory
+      file:
+        path: /tmp/devops
+        state: directory
+# if i want delete the directory then only use state : absent
+
+---
+- name: Create the folder on a remote server
+  hosts: localhost
+  tasks:
+    - name: Create directory
+      file:
+        path: /tmp/devops
+        state: absent

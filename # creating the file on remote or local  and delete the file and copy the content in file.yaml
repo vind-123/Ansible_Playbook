@@ -1,0 +1,30 @@
+# creating the file on remote or local server
+---
+- name: Creating file on local
+  hosts: all
+  tasks:
+    - name: creating file
+      file:
+        path: /tmp/rajan.txt
+        state: touch
+
+
+# if i want to add content on created file
+---
+- name: "copy content on file"
+  hosts: localhost
+  tasks:
+    - name: copy content
+      copy:
+        dest: /tmp/rajan.txt
+        content: "Hi how are you"
+# if i want to delete the created file or any file
+
+---
+- name: Creating file on local
+  hosts: all
+  tasks:
+    - name: creating file
+      file:
+        path: /tmp/rajan.txt
+        state: absent

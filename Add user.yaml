@@ -1,0 +1,7 @@
+---
+- name: Adding user
+  hosts: localhost
+  tasks:
+    - name: adding user
+      user:
+        name: svc_scom_xplat

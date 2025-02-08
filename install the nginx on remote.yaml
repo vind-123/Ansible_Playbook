@@ -1,0 +1,14 @@
+---
+- name: Install the nginx on local as well remote
+  hosts: all
+  tasks:
+    - name: Install The nginx
+      yum:
+        name: nginx
+        state: present
+
+    - name: start the service
+      service:
+        name: nginx
+        state: started
+        enabled: true

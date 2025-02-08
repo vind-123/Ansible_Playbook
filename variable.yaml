@@ -1,0 +1,16 @@
+# in playbook we can use variable so in below playbook i have used app_name vars it is '{{}}'
+---
+- name: Install the nginx on local as well remote
+  hosts: localhost
+  vars:
+    app_name: nginx
+  tasks:
+    - name: Install The nginx
+      yum:
+        name: '{{app_name}}'
+        state: present
+
+    - name: start the service
+      service:
+        name: '{{app_name}}'
+        state: started
